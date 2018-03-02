@@ -45,7 +45,14 @@ function combat(link, gannon){
     function combatLink() {
         if (battleRoyale.char1 === link.charName) {
             gannonHealth = strikeLink - gannonHealth;
-            console.log('Gannons Health',gannonHealth);
+            console.log('Link strikes!');
+            if (gannonHealth > 0) {
+                console.log(`Gannon has ${gannonHealth} health remaining`);
+                gannonHealth = gannonHealth;
+                combatLink(gannonHealth)
+            } else if (gannonHealth <= 0) {               
+                console.log('Gannon has been vanquished!');
+            }
         }
     }  
     combatLink() 
